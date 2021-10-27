@@ -1,0 +1,166 @@
+html {
+    height: 100%;
+}
+
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: cadetblue;
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    padding-left: 40px;
+}
+
+.logo h2 {
+    font-family: sans-serif;
+}
+
+.nav {
+    display: flex;
+    list-style: none;
+    padding-right: 40px;
+}
+
+
+
+.nav li {
+    margin-inline: 15px;
+}
+
+.nav a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #232323;
+    font-family: sans-serif;
+}
+
+.nav a:hover {
+    color: black;
+    box-shadow: inset 0 -2px 0 #1a1d1c;
+}
+
+.search-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.search-container input{
+    padding: 5px;
+    padding-left: 12px;
+    border: 1px solid #3d3d3d;
+    border-radius: 20px;
+    outline: none;
+    letter-spacing: 0.5px;
+}
+
+
+/* Gallery */
+
+.gallery-container{
+    padding-inline: 25px;
+    display: grid;
+    max-width: 1024px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    gap:15px;
+    padding-bottom: 20px;
+}
+
+.imgCard{
+    overflow: hidden; 
+}
+
+.imgCard img{
+    width: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform .4s;
+}
+
+
+.imgCard:hover img {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+
+.imgCard:hover img {
+    transform: scale(1.1);
+    transform-origin: 50% 50%;
+  }
+
+
+
+/* Footer */
+.main-footer{
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+}
+
+.main-footer .logo {
+    display: flex;
+    justify-content: center;
+    font-size: 1.7rem;
+    align-items: center;
+    height: 63px;
+    color: #292929;
+    background-color: lightgray;
+    padding: 0;
+}
+
+.main-footer p {
+    text-align: center;
+    margin: auto;
+    font-size: 0.8125rem;
+    color: #a6a6a6;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.footer-nav .item {
+    width: 40px;
+    height: 40px;
+    background-color: #e5e5e5;
+}
+
+.footer-nav .item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.item i {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+.item:hover {
+    background-color: #516fad;
+    transition: 0.3s;
+
+}

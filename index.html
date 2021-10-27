@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Meme Generator</title>
+</head>
+<body onload="onInit()">
+    <header>
+        <div class="header-container">
+            <div class="logo"><h2>Meme Generator</h2></div>
+            <ul class="nav">
+                <li> <a href="#">Gallery</a> </li>
+                <li><a href="#">Memes</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <input  list="keywords" id="keywords-choise" name="keywords-choise" placeholder="search memes"/>
+            <datalist onchange="setKeyWord(this.value)" id="keywords"></datalist>    
+        </div>
+        <!-- Gallery -->
+        <section class="gallery-container"></section>
+        <!-- Memes Editor -->
+        <section class="memes-container"></section>
+
+
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="logo">Meme Generator</div>
+        <p><small>© 2021 Amit Amar - All Rights Reserved</small></p>
+        <ul class="footer-nav">
+            <div class="item facebook"><i class="fab fa-facebook-f"></i></div>
+            <div class="item twitter"><i class="fab fa-twitter"></i></div>
+            <div class="item instagram"><i class="fab fa-behance"></i></div>
+            <div class="item github"><i class="fas fa-basketball-ball"></i></div>
+        </ul>
+    </footer>
+
+    <script src="/js/util.js"></script>
+    <script src="/js/storage.js"></script>
+    <script src="/js/upload.js"></script>
+    <script src="/js/meme.service.js"></script>
+    <script src="/js/meme.controller.js"></script>
+
+</body>
+</html>
+
+
+
