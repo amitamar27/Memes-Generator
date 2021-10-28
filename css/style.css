@@ -10,6 +10,17 @@ body {
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: impact;
+    src: url(../fonts/impact.ttf);
+}
+
+
+/* Help */
+.flex{
+    display: flex;
+}
+
 .header-container {
     display: flex;
     flex-direction: row;
@@ -53,7 +64,7 @@ body {
     box-shadow: inset 0 -2px 0 #1a1d1c;
 }
 
-.search-container{
+.search-container {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -61,7 +72,7 @@ body {
     padding-bottom: 20px;
 }
 
-.search-container input{
+.search-container input {
     padding: 5px;
     padding-left: 12px;
     border: 1px solid #3d3d3d;
@@ -73,21 +84,21 @@ body {
 
 /* Gallery */
 
-.gallery-container{
+.gallery-container {
     padding-inline: 25px;
     display: grid;
     max-width: 1024px;
     margin: 0 auto;
-    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
-    gap:15px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
     padding-bottom: 20px;
 }
 
-.imgCard{
-    overflow: hidden; 
+.imgCard {
+    overflow: hidden;
 }
 
-.imgCard img{
+.imgCard img {
     width: 100%;
     object-fit: contain;
     cursor: pointer;
@@ -96,20 +107,20 @@ body {
 
 
 .imgCard:hover img {
-	-webkit-transform: scale(1.3);
-	transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
 }
 
 
 .imgCard:hover img {
     transform: scale(1.1);
     transform-origin: 50% 50%;
-  }
+}
 
 
 
 /* Footer */
-.main-footer{
+.main-footer {
     display: flex;
     flex-direction: column;
     background-color: lightgray;
@@ -163,4 +174,40 @@ body {
     background-color: #516fad;
     transition: 0.3s;
 
+}
+
+
+/* MEMES-CONTAINER */
+
+.memes-container {
+    max-width: 550px;
+    display: flex;
+    margin: auto;
+}
+
+.canvas-container {
+    border: 1px solid black;
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#canvas{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .close-btn {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin-bottom: 15px;
+} */
+
+.control-panel{
+    display: flex;
+    flex-direction: column;
+    padding-left: 42px;
+  
 }
