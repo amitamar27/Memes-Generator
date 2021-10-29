@@ -8,6 +8,9 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 @font-face {
@@ -17,7 +20,7 @@ body {
 
 
 /* Help */
-.flex{
+.flex {
     display: flex;
 }
 
@@ -26,7 +29,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: cadetblue;
+    background-color: #ff8800;
     width: 100%;
     height: 100%;
 }
@@ -180,19 +183,16 @@ body {
 /* MEMES-CONTAINER */
 
 .memes-container {
-    max-width: 550px;
     display: flex;
+    justify-content: center;
     margin: auto;
 }
 
 .canvas-container {
     border: 1px solid black;
-    max-width: 400px;
-    margin: 0 auto;
-    width: 100%;
 }
 
-#canvas{
+#canvas {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -205,9 +205,36 @@ body {
     margin-bottom: 15px;
 } */
 
-.control-panel{
+.control-panel {
     display: flex;
+    justify-content: space-evenly;
     flex-direction: column;
     padding-left: 42px;
-  
+    font-family: sans-serif;
+
+}
+
+.edit-text input {
+    padding: 5px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+
+.panel-options-btns button {
+    font-size: 20px;
+    margin-inline: 5px;
+}
+
+.panel-options-text button {
+    font-size: 20px;
+    margin-inline: 5px;
+}
+
+.choose-font label {
+    margin-right: 5px;
+}
+
+.text-color label {
+    margin-inline: 5px;
 }

@@ -12,7 +12,7 @@ function onInit(){
     createImgs()
     renderGallery()
     renderKeyWords()
-    console.log(gMeme)
+
 }
 
 
@@ -51,13 +51,15 @@ function onSelectImg(imgId){
     elGalleryContainer.style.display = 'none'
     document.querySelector('.control-panel').style.display = 'flex';
     document.querySelector('.canvas-container').style.display = 'flex';
+
     createMeme(imgId)
+    console.log(gMeme)
     renderMeme()
 }
 
 function renderMeme() {
  
-
+    
     var meme = getMeme();
  
     var lines = meme.lines;
@@ -69,6 +71,7 @@ function renderMeme() {
             drawText(line.txt, line.pos.x, line.pos.y, line.size, line.align, line.fillColor, line.strokeColor, line.fontFamily);
         })
     }
+    console.log(img)
 
 }
 

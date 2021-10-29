@@ -32,7 +32,7 @@ function createMeme(imgid) {
         imgid: imgid,
         selectedLineIdx: 0,
         lines: [{
-                txt: 'edit this text',
+                txt: 'enter your text',
                 size: 40,
                 align: 'center',
                 fillColor: '#ffffff',
@@ -44,7 +44,7 @@ function createMeme(imgid) {
                 }
             },
             {
-                txt: 'edit this text',
+                txt: 'enter your text',
                 size: 40,
                 align: 'center',
                 fillColor: '#ffffff',
@@ -58,6 +58,7 @@ function createMeme(imgid) {
         ]
     };
     gMeme = meme;
+    
     return meme;
 }
 
@@ -69,9 +70,6 @@ function getMeme() {
 function setFilterImg(keyword) {
     gFilterWords = keyword
 }
-
-
-
 
 
 function _createImg(id, url, keywords = []) {
@@ -137,12 +135,12 @@ function switchLines(){
 
 function addText(){
     var y = 100
-    gMeme.lines.splice(0, 0, {
-        txt: 'edit your text',
+    gMeme.lines.splice(2, 0, {
+        txt: 'enter your text',
         size: 40,
         align: 'center',
-        fillColor: '#ffffff',
-        strokeColor: '#000000',
+        fillColor: 'white',
+        strokeColor: 'black',
         fontFamily: 'impact',
         pos: { x: 150, y}
     })
