@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="./css/style.css">
     <title>Meme Generator</title>
 </head>
+
 <body onload="onInit()">
     <header>
         <div class="header-container">
-            <div class="logo"><h2>Meme Generator</h2></div>
+            <div class="logo">
+                <h2>Meme Generator</h2>
+            </div>
             <ul class="nav">
                 <li> <a href="#">Gallery</a> </li>
                 <li><a href="#">Memes</a></li>
@@ -22,8 +26,8 @@
 
     <main>
         <div class="search-container">
-            <input  list="keywords" id="keywords-choise" name="keywords-choise" placeholder="search memes"/>
-            <datalist onkeyup="onFilterImgs(this.value)" id="keywords"></datalist>    
+            <input list="keywords" id="keywords-choise" name="keywords-choise" placeholder="search memes" />
+            <datalist onkeyup="onFilterImgs(this.value)" id="keywords"></datalist>
         </div>
         <!-- Gallery -->
         <section class="gallery-container"></section>
@@ -32,24 +36,29 @@
             <div class="close">
                 <button onclick="closeMeme()" class="close-btn">X</button>
             </div>
-            
+
             <div class="canvas-container">
                 <canvas id="canvas" width="300" height="300"></canvas>
             </div>
             <div class="control-panel">
                 <div class="edit-text">
-                    <input type="text" name="text" id="text" onkeyup="onUpdateText(this.value)" placeholder="enter your text">
+                    <input type="text" name="text" id="text" onkeyup="onUpdateText(this.value)"
+                        placeholder="enter your text">
                 </div>
                 <div class="panel-options-btns">
-                    <button class="chaneLinePos" onclick="onChangeLinePos('down')"><i class="fas fa-arrow-down"></i></button>
-                    <button class="chaneLinePos" onclick="onChangeLinePos('up')"><i class="fas fa-arrow-up"></i></button>
+                    <button class="chaneLinePos" onclick="onChangeLinePos('down')"><i
+                            class="fas fa-arrow-down"></i></button>
+                    <button class="chaneLinePos" onclick="onChangeLinePos('up')"><i
+                            class="fas fa-arrow-up"></i></button>
                     <button onclick="onSwitchLines()"><i class="fas fa-arrows-alt-v"></i></button>
                     <button onclick="onDeleteText()"><i class="fas fa-trash-alt"></i></button>
                     <button onclick="onAddText()"><i class="fas fa-plus"></i></button>
                 </div>
                 <div class="panel-options-text flex">
-                    <button onclick="onChangeTextSize('smaller')"><i class="fas fa-minus"></i><i class="fas fa-font" class="flex"></i></button>
-                    <button onclick="onChangeTextSize('bigger')"><i class="fas fa-plus"></i><i class="fas fa-font" class="flex"></i></button>
+                    <button onclick="onChangeTextSize('smaller')"><i class="fas fa-minus"></i><i class="fas fa-font"
+                            class="flex"></i></button>
+                    <button onclick="onChangeTextSize('bigger')"><i class="fas fa-plus"></i><i class="fas fa-font"
+                            class="flex"></i></button>
                     <button onclick="onAlignText('left')"><i class="fas fa-align-left" class="flex"></i></button>
                     <button onclick="onAlignText('center')"><i class="fas fa-align-center" class="flex"></i></button>
                     <button onclick="onAlignText('right')"><i class="fas fa-align-right" class="flex"></i></i></button>
@@ -65,18 +74,26 @@
 
                 <div class="text-color flex">
                     <label for="stroke-color">stroke color:</label>
-                    <input onchange="onSetStrokeColor(this.value)" type="color" name="stroke-color" id="stroke-color" class="color-input">
+                    <input onchange="onSetStrokeColor(this.value)" type="color" name="stroke-color" id="stroke-color"
+                        class="color-input">
                     <label for="fill-color">fill color:</label>
-                    <input onchange="onSetFillColor(this.value)" type="color" name="fill-color" id="fill-color" class="color-input" value="#ffffff" >
+                    <input onchange="onSetFillColor(this.value)" type="color" name="fill-color" id="fill-color"
+                        class="color-input" value="#ffffff">
                 </div>
-
                 <div>
                     <a href="#" onclick="downloadCanvas(this)">Download</a>
                 </div>
+
+                    <button class="btn" method="POST" onclick="uploadImg(this,event)">Upload Image from Canvas</button>
+
+                    <p class="user-msg" style="display: none;"></p>
+                    <div class="share-container"></div>
+
+               
             </div>
         </section>
-        
 
+    
 
     </main>
 
@@ -97,8 +114,19 @@
     <script src="./js/meme.service.js"></script>
     <script src="./js/meme.controller.js"></script>
 
+
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId            : 'your-app-id',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v12.0'
+          });
+        };
+      </script>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
 </body>
+
 </html>
-
-
-
