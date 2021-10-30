@@ -4,11 +4,12 @@ var gCanvas;
 var gCtx;
 
 function onInit(){
+    gCanvas = document.getElementById('canvas');
+    gCtx = gCanvas.getContext('2d');
   
     var elClose = document.querySelector('.close')
     elClose.style.display = 'none'
-    gCanvas = document.getElementById('canvas');
-    gCtx = gCanvas.getContext('2d');
+
     createImgs()
     renderGallery()
     renderKeyWords()
@@ -59,7 +60,6 @@ function onSelectImg(imgId){
 
 function renderMeme() {
  
-    
     var meme = getMeme();
  
     var lines = meme.lines;

@@ -71,6 +71,13 @@ function setFilterImg(keyword) {
     gFilterWords = keyword
 }
 
+function filterImgs(keyword){
+    const imgs = gImgs.filter((img)=>{
+        return img.filter(name => name.toLowerCase().search(gFilterWords.toLowerCase()) !== -1);
+    })
+    return imgs
+}
+
 
 function _createImg(id, url, keywords = []) {
     return {

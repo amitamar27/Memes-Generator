@@ -26,8 +26,8 @@
 
     <main>
         <div class="search-container">
-            <input list="keywords" id="keywords-choise" name="keywords-choise" placeholder="search memes" />
-            <datalist onkeyup="onFilterImgs(this.value)" id="keywords"></datalist>
+            <input onkeyup="onFilterImgs(this.value)" list="keywords" id="keywords-choise" name="keywords-choise" placeholder="search memes" />
+            <datalist  id="keywords"></datalist>
         </div>
         <!-- Gallery -->
         <section class="gallery-container"></section>

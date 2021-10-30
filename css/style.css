@@ -87,11 +87,6 @@ body {
 
 /* Gallery */
 
-main{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
 
 .gallery-container {
     padding-inline: 25px;
