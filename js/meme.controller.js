@@ -13,7 +13,7 @@ function onInit(){
     createImgs()
     renderGallery()
     renderKeyWords()
-
+  
 }
 
 
@@ -35,8 +35,6 @@ function renderGallery(){
 
     
     var imgs = getImgs()
-    // var imgs = gImgs
-    // var imgs = filterImgs();
     var imgsHTML = imgs.map((img)=>{
         return `<div class="imgCard">
                     <img onclick="onSelectImg('${img.id}')" src="${img.url}" alt="">
@@ -74,6 +72,8 @@ function renderMeme() {
     console.log(img)
 
 }
+
+
 
 function drawText(text, x, y, size, align, fillColor, strokeColor, fontFamily) {
     gCtx.lineWidth = 2;

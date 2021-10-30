@@ -6,6 +6,7 @@ var KEY = 'memes'
 var gKeywords
 var gFilterWords
 
+
 gKeywords = {
     'happy': 4,
     'funny': 1,
@@ -27,6 +28,7 @@ gKeywords = {
 }
 
 function createMeme(imgid) {
+  
     var meme = {
         id: makeId(),
         imgid: imgid,
@@ -58,13 +60,18 @@ function createMeme(imgid) {
         ]
     };
     gMeme = meme;
-    
+
     return meme;
 }
+
+
+
 
 function getMeme() {
     return gMeme;
 }
+
+
 
 
 function setFilterImg(keyword) {
@@ -141,7 +148,7 @@ function switchLines(){
 }
 
 function addText(){
-    var y = 100
+    var y = 150
     gMeme.lines.splice(2, 0, {
         txt: 'enter your text',
         size: 40,

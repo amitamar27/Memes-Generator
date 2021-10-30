@@ -239,3 +239,18 @@ body {
 .text-color label {
     margin-inline: 5px;
 }
+
+
+@media (max-width: 700px) {
+    .memes-container {
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .control-panel{
+        display: flex;
+        margin-top: 34px;
+        margin-bottom: 39px;
+    }
+}
