@@ -8,10 +8,6 @@ function downloadCanvas(link) {
 
 
 
-// function onImgInput(ev) {
-//     loadImageFromInput(ev, renderImg)
-// }
-
 function loadImageFromInput(ev, onImageReady) {
     document.querySelector('.share-container').innerHTML = ''
     var reader = new FileReader()
@@ -26,9 +22,6 @@ function loadImageFromInput(ev, onImageReady) {
 }
 
 
-// function renderImg(img) {
-//     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
-// }
 
 
 function uploadImg() {

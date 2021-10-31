@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +9,6 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Meme Generator</title>
 </head>
-
 <body onload="onInit()">
     <header>
         <div class="header-container">
@@ -18,16 +16,16 @@
                 <h2>Meme Generator</h2>
             </div>
             <ul class="nav">
-                <li> <a href="#">Gallery</a> </li>
-                <li><a href="#">Memes</a></li>
+                <li onclick="renderGallery()"> <a href="#">Gallery</a> </li>
+                <li ><a onclick="renderSavedMemes()" href="#">Memes</a></li>
             </ul>
         </div>
     </header>
-
     <main>
         <div class="search-container">
-            <input onkeyup="onFilterImgs(this.value)" list="keywords" id="keywords-choise" name="keywords-choise" placeholder="search memes" />
-            <datalist  id="keywords"></datalist>
+            <input onkeyup="onFilterImgs(this.value)" list="keywords" id="keywords-choise" name="keywords-choise"
+                placeholder="search memes" />
+            <datalist id="keywords"></datalist>
         </div>
         <!-- Gallery -->
         <section class="gallery-container"></section>
@@ -81,23 +79,16 @@
                         class="color-input" value="#ffffff">
                 </div>
 
-                <div>
-                    <a href="#" onclick="downloadCanvas(this)">Download</a>
+                <div class="download-meme">
+                    <button><a href="#" onclick="downloadCanvas(this)">Download</a></button>
+                    <button method="POST" onclick="uploadImg(this,event)">Upload</button>
+                    <button><a href="#" onclick="onSaveMeme()">Save</a></button>
                 </div>
-
-                    <button class="btn" method="POST" onclick="uploadImg(this,event)">Upload Image from Canvas</button>
-
-                    <p class="user-msg" style="display: none;"></p>
-                    <div class="share-container"></div>
-
-               
+                <p class="user-msg" style="display: none;"></p>
+                <div class="share-container"></div>
             </div>
         </section>
-
-    
-
     </main>
-
     <footer class="main-footer">
         <div class="logo">Meme Generator</div>
         <p><small>© 2021 Amit Amar - All Rights Reserved</small></p>
@@ -115,19 +106,7 @@
     <script src="./js/meme.service.js"></script>
     <script src="./js/meme.controller.js"></script>
 
-
-    <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            appId            : 'your-app-id',
-            autoLogAppEvents : true,
-            xfbml            : true,
-            version          : 'v12.0'
-          });
-        };
-      </script>
-      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-
 </body>
-
 </html>
+
+

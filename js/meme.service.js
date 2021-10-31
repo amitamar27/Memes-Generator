@@ -2,9 +2,10 @@
 
 var gImgs
 var gMeme
-var KEY = 'memes'
+const KEY = 'memes'
 var gKeywords
 var gFilterWords
+var gSavedMemes = _createMemes()
 
 
 gKeywords = {
@@ -27,8 +28,8 @@ gKeywords = {
     'fear': 1
 }
 
+
 function createMeme(imgid) {
-  
     var meme = {
         id: makeId(),
         imgid: imgid,
@@ -65,6 +66,38 @@ function createMeme(imgid) {
 }
 
 
+function _createMemes() {
+    var memes = loadFromStorage(KEY);
+    if (!memes || !memes.length) {
+        memes = [{
+                id: makeId(),
+                imgUrl: `./meme-imgs-square/1.jpg`,
+                selectedImgId: 1,
+                selectedLineIdx: 0,
+                lines: [
+                    { txt: 'my meme', size: 40, align: 'center', fillColor: '#ffffff', strokeColor: '#000000', fontFamily: 'impact', pos: { x: 175, y: 60 } }
+                ]
+            }]
+        gSavedMemes = memes;
+        saveToStorage(KEY,gSavedMemes)
+    }
+    return memes;
+}
+
+
+function saveMeme(img){
+    
+    gMeme.imgUrl = img;
+    gSavedMemes.push(gMeme);
+    saveToStorage(KEY, gSavedMemes);
+}
+
+
+function removeSaveMeme(memeId){
+    var memeIdx = gSavedMemes.findIndex(meme=> meme.id === memeId)
+    gSavedMemes.splice(memeIdx,1)
+    saveToStorage(KEY, gSavedMemes)
+}
 
 
 function getMeme() {
@@ -72,11 +105,10 @@ function getMeme() {
 }
 
 
-
-
 function setFilterImg(keyword) {
     gFilterWords = keyword
 }
+
 
 function filterImgs(keyword){
     const imgs = gImgs.filter((img)=>{
@@ -93,6 +125,7 @@ function _createImg(id, url, keywords = []) {
         keywords
     }
 }
+
 
 function createImgs() {
     var imgs = []
@@ -130,6 +163,7 @@ function updateText(textEvent){
     gMeme.lines[gMeme.selectedLineIdx].txt = textEvent;
 }
 
+
 function changeLinePos(btnEvent){
     if (btnEvent === 'down'){
         gMeme.lines[gMeme.selectedLineIdx].pos.y += 5;
@@ -146,6 +180,7 @@ function switchLines(){
         gMeme.selectedLineIdx++;
     }
 }
+
 
 function addText(){
     var y = 150
@@ -187,7 +222,6 @@ function alignText(btnEvent){
 
 
 function setFont(optionValue){
-    
     if(optionValue === 'impact'){
         gMeme.lines[gMeme.selectedLineIdx].fontFamily = 'impact'
     }else if(optionValue === 'sans-serif'){
@@ -197,10 +231,33 @@ function setFont(optionValue){
     }
 }
 
+
 function setStrokeColor(color){
     gMeme.lines[gMeme.selectedLineIdx].strokeColor = color
 }
 
+
 function fillColor(color){
     gMeme.lines[gMeme.selectedLineIdx].fillColor = color
 }
+
+
+function getSavedMemes() {
+    return gSavedMemes;
+}
+
+
+function currMeme(id) {
+    gMeme = getMemeById(id);
+}
+
+
+function getMemeById(memeId){
+    var meme = gSavedMemes.find((meme)=>{
+        return memeId === meme.id
+    })
+    return meme
+}
+
+
+
